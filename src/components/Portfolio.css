@@ -1,0 +1,120 @@
+.portfolio-filters {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: transparent;
+    color: var(--slate);
+    font-size: 1rem;
+    padding: 8px 16px;
+    border: 1px solid var(--light-navy);
+    border-radius: 20px;
+    transition: var(--transition);
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    color: var(--gold);
+    border-color: var(--gold);
+    background-color: var(--gold-tint);
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.portfolio-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    background-color: var(--light-navy);
+}
+
+.portfolio-content {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 75%;
+    /* 4:3 Aspect Ratio */
+    overflow: hidden;
+}
+
+.portfolio-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: var(--transition);
+    filter: grayscale(100%) contrast(1) brightness(90%);
+}
+
+.portfolio-item:hover .portfolio-image img {
+    filter: none;
+    transform: scale(1.1);
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 25, 47, 0.9);
+    /* Deep Navy Overlay */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    opacity: 0;
+    transition: var(--transition);
+    transform: translateY(20px);
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-title {
+    color: var(--white);
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+}
+
+.project-cat {
+    color: var(--gold);
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.project-desc {
+    color: var(--light-slate);
+    font-size: 0.9rem;
+}
+
+/* Light mode adjustments */
+body.light-mode .portfolio-overlay {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+body.light-mode .project-title {
+    color: var(--navy);
+}
+
+body.light-mode .project-desc {
+    color: var(--slate);
+}

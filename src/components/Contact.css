@@ -1,0 +1,48 @@
+.contact-container {
+    max-width: 600px;
+    text-align: center;
+}
+
+.contact-text {
+    font-size: 1.1rem;
+    color: var(--slate);
+    margin-bottom: 50px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    width: 100%;
+}
+
+.form-input {
+    width: 100%;
+    padding: 15px;
+    background-color: var(--light-navy);
+    border: 1px solid var(--lightest-navy);
+    border-radius: 4px;
+    color: var(--white);
+    font-family: var(--font-body);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: var(--gold);
+}
+
+.form-textarea {
+    resize: vertical;
+}
+
+body.light-mode .form-input {
+    background-color: var(--light-navy);
+    /* Keep it slightly off-white/gray */
+    border-color: var(--light-slate);
+    color: var(--navy);
+}
